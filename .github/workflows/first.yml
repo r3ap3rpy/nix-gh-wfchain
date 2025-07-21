@@ -1,0 +1,13 @@
+# .github/workflows/build.yml
+name: First
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "First workflow "
