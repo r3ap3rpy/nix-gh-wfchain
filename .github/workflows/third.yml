@@ -1,0 +1,14 @@
+name: Third
+
+on:
+  workflow_run:
+    workflows: ["Second"]
+    types:
+      - completed
+
+jobs:
+  test:
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Running after second workflow!"
